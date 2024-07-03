@@ -5,7 +5,7 @@ import { environment } from './app/environments/environment';
 
 import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = environment.api;
+mapboxgl.accessToken = environment.apikey;
 
 
 if(!navigator.geolocation){

@@ -19,14 +19,14 @@ export class MapViewComponent implements AfterViewInit{
   ngAfterViewInit(): void {
     // console.log(this.placesService.userLocation)
 
-    if(!this.placesService.userLocation){
+    if(!this.placesService.useLocation){
       throw new Error('No hay localización');
     }
 
     const map = new Map({
       container: this.mapDivElement.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: this.placesService.userLocation,
+      center: this.placesService.useLocation,
       zoom: 9,
     });
 
@@ -39,7 +39,7 @@ export class MapViewComponent implements AfterViewInit{
       );
 
     new Marker({color: 'red'})
-      .setLngLat(this.placesService.userLocation)
+      .setLngLat(this.placesService.useLocation)
       .setPopup(popup)
       .addTo(map)
 

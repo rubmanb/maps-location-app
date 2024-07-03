@@ -13,7 +13,7 @@ export class BtnMyLocationComponent {
 
 
     goToMyLocation() {
-      if(!this.placesService.userLocation) {
+      if(!this.placesService.useLocation) {
         throw new Error('No hay ubicación')
       }
       if(!this.mapService.isMapReady){
@@ -21,7 +21,7 @@ export class BtnMyLocationComponent {
       }
 
 
-      this.mapService.flyTo(this.placesService.userLocation)
+      this.mapService.flyTo(this.placesService.useLocation)
     }
 
 }
